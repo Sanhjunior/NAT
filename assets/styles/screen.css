@@ -1,0 +1,535 @@
+/* ---------------------------------------------------------------------
+ Base
+--------------------------------------------------------------------- */
+body {
+    font-family: "Helvetica", Arial, sans-serif;
+    font-size: 13px;
+    background-color: #00527a;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* ---------------------------------------------------------------------
+ Site
+--------------------------------------------------------------------- */
+.site {
+    max-width: 1000px;
+    margin: auto;
+    padding-left: 13px; /*added line by David*/
+}
+
+.site-hd {
+    padding-top: 17px; /* modified by David*/
+    height:113px; /*added line by David*/
+    position: relative; /*added line by David*/
+}
+
+.site-nav {
+    background-color: #cccccc;
+}
+
+.site-bd {
+    padding: 18px;
+    background-color: #ffffff;
+}
+
+.site-ft {
+    padding: 18px;
+    background-color: #2c2c2c;
+}
+
+/* ---------------------------------------------------------------------
+ hList
+--------------------------------------------------------------------- */
+.hList {
+    font-size: 0;
+}
+
+.hList > * {
+    display: inline-block;
+    position: relative;
+    font-size: 12px;
+}
+
+.hList > * + * {
+    margin-left: 24px;
+}
+
+.hList > * + *:before {
+    content: "";
+    height: 14px;
+    width: 1px;
+    margin-top: -7px;
+    position: absolute;
+    top: 50%;
+    left: -12px;
+    background-color: #ffffff;
+}
+
+/* ---------------------------------------------------------------------
+ Carousel
+--------------------------------------------------------------------- */
+
+.carousel-item_isInactive {
+    position: absolute;
+    left: -9999px;
+    line-height: 0;
+}
+
+.carousel-item_isActive {
+    position: static;
+    left: 0;
+}
+
+/* Added by David */
+.carousel-wrapper{  
+    position: relative; 
+    width: 666px;
+    display: inline-block;
+}
+
+#arrow-left, #arrow-right{ 
+    position: absolute;
+    cursor: pointer;
+    top:145px;
+}
+
+#arrow-left{
+    left: 0;
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+}
+
+#arrow-right{
+    right:0;
+}
+
+#js-ellipsis-w{
+    position: absolute;
+    bottom: 19px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+}
+
+.js-ellipsis{
+    display: inline-block;
+    background: #fff;
+    border-radius: 100%;
+    height: 10px;
+    width: 10px;
+    box-shadow: inset 0 1px 2px #949494;    
+    margin-right: 11px;
+}
+
+.js-ellipsis-active{
+    background: #0084d9;
+}
+
+/* ---------------------------------------------------------------------
+ Footer
+--------------------------------------------------------------------- */
+.footer {
+    color: #ffffff;    
+    position: relative;
+}
+
+.footer a {
+    color: #ffffff;
+}
+
+
+/* ---------------------------------------------------------------------
+ David's styles
+--------------------------------------------------------------------- */
+
+/* ---------------------------------------------------------------------
+ Base
+--------------------------------------------------------------------- */
+
+a:hover{
+    text-decoration: underline;            
+}
+
+/* ---------------------------------------------------------------------
+ Header
+--------------------------------------------------------------------- */
+
+.logo{
+    display: inline-block;
+}
+
+.my-things{
+    float: right;
+    padding-top: 63px;
+    display: block;
+}
+
+.my-things ul li{
+    display: inline-block;      
+}
+
+.mt-links{
+    color:#fff;
+    padding:0 10px;
+    border-right: 1px solid #fff;  
+    font-weight: 100;
+    font-size: 12px;
+}
+
+
+
+.mt-last{
+    color:#fff;
+    padding:0 0 0 10px;
+    font-weight: 100;
+    font-size: 12px;
+}
+
+
+
+/* ---------------------------------------------------------------------
+ Site navigation
+--------------------------------------------------------------------- */
+
+.site-nav ul{    
+    border: 1px solid #bdbdbd;
+    background: linear-gradient(#fefefe,#d0d0d0);
+    text-align: center;     
+    font-size: 0;    
+}
+
+
+.site-nav ul li{
+    display:inline-block;
+    width: 159px;
+    height: 38px;
+    text-align: center; 
+    font-size: 0;
+
+}
+
+.site-nav ul li:hover{    
+    padding-top: 1px;
+    background: #d3d5d8;
+    -webkit-transition: all .25s ease-in-out;
+       -moz-transition: all .25s ease-in-out;
+        -ms-transition: all .25s ease-in-out;
+         -o-transition: all .25s ease-in-out;
+            transition: all .25s ease-in-out;    
+}
+
+
+.site-nav ul li a{
+    color:#282b2e;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    line-height: 40px;
+    letter-spacing: 1px;
+    word-spacing: 3px;    
+    display: inline-block;
+    height: 40px;
+    width: 159px;
+}
+
+.site-nav ul li a:hover{
+    text-decoration: none;    
+}
+
+.active{
+    background: #fff!important;
+    border-top: 1px solid #bdbdbd;
+    border-right:1px solid #bdbdbd;
+    border-left:1px solid #bdbdbd;
+    border-bottom: 0;
+    margin-top: -5px;
+    margin-bottom: -1px;
+    padding:5px 19px 1px;
+    pointer-events: none;
+    cursor: default;
+}
+
+
+.active a{
+    font-weight: 600!important;
+    line-height: 43px;
+}
+
+/* ---------------------------------------------------------------------
+ Site body
+--------------------------------------------------------------------- */
+
+.site-bd{
+    border: 1px solid #bdbdbd;
+    border-width: 0px 1px 1px 1px;
+    display: block;
+}
+
+.carousel{
+    display: inline-block;
+}
+
+/* ---------------------------------------------------------------------
+ Newsletter
+--------------------------------------------------------------------- */
+
+.newsletter{
+    display: inline-block;
+    width: 274px;
+    float:right;
+    background: #dbdbdb;
+    margin:0 0 20px 20px;
+}
+
+.nl-body{
+    padding:8px 10px;    
+}
+
+.nl-body h3{
+    font-weight: 900;
+    font-size: 12px;
+    color: #282b2e;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #969696;
+    text-transform: uppercase;
+}
+
+.nl-body h3 img{
+    padding-right: 10px;
+}
+
+form{
+    padding-top: 10px;
+    display: inline-block;
+}
+
+.email{
+    height: 26px;
+    width: 234px;
+    border:1px solid #cecece;
+    box-shadow: inset 0 0 10px #cecece;   
+    padding:0 10px; 
+}
+
+.email:focus{
+    border-color: #9c9c9c;
+}
+
+.nl-kind{
+    background: #cac9c9;
+    margin-top: 10px;
+    padding:10px 10px;
+}
+
+.nl-kind h4{
+    font-size: 12px;
+    font-style: italic;
+    font-weight: 300;
+}
+
+.nl-kind input[type="checkbox"]{
+    margin:10px 0 0 0;   
+    opacity: 0;
+    position: absolute;    
+}
+
+.nl-kind input[type="checkbox"] + label {
+    text-align:center;
+    cursor:pointer;
+}
+
+.nl-kind label div{    
+    display: inline-block;
+    margin-top: 3px;
+    height: 14px;
+    width: 13px;    
+    background: transparent url('../images/checkBox_btn.gif') left top/13px 14px no-repeat;    
+}
+
+
+.nl-kind input[type="checkbox"]:checked + label div {
+    height: 14px;
+    width: 13px;
+    background: transparent url('../images/checkBox_btn_checked.gif') left top/13px 14px no-repeat;    
+}
+
+.nl-kind label{
+    font-weight: 600;
+    padding-left:5px;
+    padding-top: 2px;
+}
+
+.sign-up{
+    border:0;
+    width:71px;
+    height: 25px;
+    color:#fff;
+    background: #0084d9;
+    margin:9px 0 2px;
+    float:right;
+    text-transform: uppercase;
+    font-size: 12px
+}
+
+.sign-up:hover{
+    cursor: pointer;
+    background: #00527a;
+    -webkit-transition: all .25s ease-in-out;
+       -moz-transition: all .25s ease-in-out;
+        -ms-transition: all .25s ease-in-out;
+         -o-transition: all .25s ease-in-out;
+            transition: all .25s ease-in-out;    
+}
+
+.nl-footer{
+    width: 274px;
+    background: #cac9c9;
+    border-top:1px solid #969696;
+    text-align: center;
+    padding: 5px 0;
+    font-size: 12px;
+}
+
+.nl-footer li{
+    display: inline;
+}
+
+.nl-footer li a{
+    color:#282b2e;
+    padding-right:12px;   
+}
+.nl-footer li:first-child{
+    border-right:1px solid #282b2e;
+    margin-right: 12px;    
+}
+
+/* ---------------------------------------------------------------------
+ Popular Videos
+--------------------------------------------------------------------- */
+
+.thumbnails{    
+    margin-top: 18px;
+}
+
+.video-title{
+    position: relative;  
+    display: inline-block;
+    width: 100%;  
+}
+
+.video-title h3{
+    max-width: 100%;
+    height: 34px;
+    line-height: 34px;
+    white-space: nowrap;
+    background: #0084d9;
+    text-transform: uppercase;
+    color:#fff;
+    font-size: 12px;
+    font-weight: 500;
+    padding-left: 3px;
+}
+
+
+.video-bar{
+    position: absolute;
+    top:0;
+    left:-33px;
+}
+
+.video-tn{
+    position:relative;
+    display: inline-block;
+    margin-top: 20px;
+    margin-right: 16px;
+}
+
+/*to make it responsive add media-query and make it 3n+1, 2n+1 and after that apply it to all(without pseudo >*/
+
+.video-tn:nth-child(4n+1){  
+    margin-right: 0;
+}
+
+.video-tn img{
+    max-width: 100%;
+    max-height: 100%;
+    vertical-align: top;
+}
+
+.play-btn{
+    position: absolute;
+    background: url("../images/play-btn.png") center center no-repeat;
+    height: 42px;
+    width: 42px;
+    top: 55px;
+    left: 91px;
+    opacity: 0.8;
+}
+
+.video-cap{
+    background: #e3e4e4;
+    position: absolute;
+    bottom: 0;
+    width: 197px;
+    opacity: 0.8;
+    padding:9px 14px 12px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.video-tn:hover{
+    cursor: pointer;
+}
+.video-tn:hover .play-btn,.video-tn:hover .video-cap{
+    -webkit-transition: all .1s ease-in-out;
+       -moz-transition: all .1s ease-in-out;
+        -ms-transition: all .1s ease-in-out;
+         -o-transition: all .1s ease-in-out;
+            transition: all .1s ease-in-out;
+    opacity: 1;
+}
+
+
+/* ---------------------------------------------------------------------
+ Footer
+--------------------------------------------------------------------- */
+
+.entp-data{
+    
+    margin-top: 10px;
+}
+
+.entp-data p, .entp-data address{
+    display: inline-block;
+    color:#969696;
+    font-size: 12px;
+}
+
+.entp-data p {
+    border-right:1px solid #969696;
+    padding-right: 12px;    
+}
+
+.entp-data address{
+    padding-left: 12px;
+}
+
+.social-btns{
+    
+    float: right;
+    position: absolute;
+    top: 9px;
+    right: 0; /*Darle dos vueltas*/
+}
+
+.social-btns ul{
+    font-size: 0;
+}
+
+.social-btns ul li{
+    display: inline-block;
+    margin-right: 8px;        
+}

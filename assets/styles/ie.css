@@ -1,0 +1,74 @@
+/* ---------------------------------------------------------------------
+ CSS hacks for ie8+
+--------------------------------------------------------------------- */
+
+/* ---------------------------------------------------------------------
+ Site navigation
+--------------------------------------------------------------------- */
+.site-nav ul{
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefefe', endColorstr='#d0d0d0',GradientType=0 ); /* IE6-9 */
+}
+
+.active a{
+   pointer-events:none;
+   cursor: default!important;
+   color:#4e5153!important;
+}
+
+/* ---------------------------------------------------------------------
+ Newsletter
+--------------------------------------------------------------------- */
+
+.nl-kind input[type="checkbox"]{
+	margin-top: 2px!important;
+}
+
+.email{
+	background:transparent url("../images/input-bkg.png") 1px 1px no-repeat;
+	line-height: 26px!important;
+}
+
+.email:focus{
+	background:url("../images/input-bkg-clicked.png") 1px 1px no-repeat!important;	
+}
+
+
+/* ---------------------------------------------------------------------
+ Carousel
+--------------------------------------------------------------------- */
+
+#arrow-left{
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+}
+
+#js-ellipsis-w{
+	margin-left: -41px;
+}
+
+.js-ellipsis{
+	background: transparent url("../images/ellipsis.png") 1px 1px no-repeat!important;
+}
+
+.js-ellipsis-active{
+	background: transparent url("../images/ellipsis-active.png") 1px 1px no-repeat!important;	
+}
+
+/* ---------------------------------------------------------------------
+ Popular Videos
+--------------------------------------------------------------------- */
+
+.importantMargin{
+	margin-right: 0!important;
+}
+
+.play-btn, .video-cap{
+	filter: alpha(opacity=80);
+}
+
+.video-tn:hover .play-btn, .video-tn:hover .video-cap{
+	filter: alpha(opacity=100);	
+}
+
+.video-tn-4th{
+	margin-right:0!important;
+}

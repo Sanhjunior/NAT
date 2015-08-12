@@ -1,8 +1,8 @@
 /**
  * @fileOverview ie
- * 
  *
  * @author David
+ *
  */
 
 $(function() {

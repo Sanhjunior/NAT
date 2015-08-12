@@ -11,6 +11,10 @@ a {
     text-decoration: none;
 }
 
+a:hover{
+	text-decoration: underline;	
+}
+
 /* ---------------------------------------------------------------------
  Site
 --------------------------------------------------------------------- */
@@ -94,6 +98,16 @@ a {
     position: absolute;
     cursor: pointer;
     top:145px;
+    opacity: 0.8;
+}
+
+#arrow-left:hover, #arrow-right:hover{ 
+	-webkit-transition: opacity .25s ease-in-out;
+	   -moz-transition: opacity .25s ease-in-out;
+	    -ms-transition: opacity .25s ease-in-out;
+	     -o-transition: opacity .25s ease-in-out;
+	        transition: opacity .25s ease-in-out;
+	opacity: 1;
 }
 
 #arrow-left{
@@ -146,14 +160,6 @@ a {
 --------------------------------------------------------------------- */
 
 /* ---------------------------------------------------------------------
- Base
---------------------------------------------------------------------- */
-
-a:hover{
-    text-decoration: underline;            
-}
-
-/* ---------------------------------------------------------------------
  Header
 --------------------------------------------------------------------- */
 
@@ -161,34 +167,14 @@ a:hover{
     display: inline-block;
 }
 
-.my-things{
-    float: right;
-    padding-top: 63px;
-    display: block;
+.site-hd ul{
+	float: right;
+	margin-top: 63px;
 }
 
-.my-things ul li{
-    display: inline-block;      
+.site-hd a{
+	color:#fff;
 }
-
-.mt-links{
-    color:#fff;
-    padding:0 10px;
-    border-right: 1px solid #fff;  
-    font-weight: 100;
-    font-size: 12px;
-}
-
-
-
-.mt-last{
-    color:#fff;
-    padding:0 0 0 10px;
-    font-weight: 100;
-    font-size: 12px;
-}
-
-
 
 /* ---------------------------------------------------------------------
  Site navigation
@@ -214,11 +200,7 @@ a:hover{
 .site-nav ul li:hover{    
     padding-top: 1px;
     background: #d3d5d8;
-    -webkit-transition: all .25s ease-in-out;
-       -moz-transition: all .25s ease-in-out;
-        -ms-transition: all .25s ease-in-out;
-         -o-transition: all .25s ease-in-out;
-            transition: all .25s ease-in-out;    
+    transition: all .25s ease-in-out;    
 }
 
 
@@ -276,40 +258,50 @@ a:hover{
  Newsletter
 --------------------------------------------------------------------- */
 
-.newsletter{
-    display: inline-block;
+.box{
     width: 274px;
     float:right;
     background: #dbdbdb;
-    margin:0 0 20px 20px;
+    margin:0 0 20px 20px;    
 }
 
-.nl-body{
-    padding:8px 10px;    
-}
-
-.nl-body h3{
+.box-head{
+	padding: 10px 0 0 10px;	
     font-weight: 900;
     font-size: 12px;
     color: #282b2e;
     padding-bottom: 10px;
-    border-bottom: 1px solid #969696;
     text-transform: uppercase;
 }
 
-.nl-body h3 img{
+.box-head span {
+  display: inline-block;
+  position: relative;  
+}
+
+.box-head span:after{
+	position: absolute;
+	content: "";
+	height: 1px;
+	top:20px;
+	left:0;
+	right: -15px;
+	background: #969696;	
+}
+
+.box-head img{
     padding-right: 10px;
 }
 
-form{
-    padding-top: 10px;
+.box-body{
+	padding: 10px 0 0 10px;
     display: inline-block;
 }
 
 .email{
     height: 26px;
     width: 234px;
-    border:1px solid #cecece;
+    border: 1px solid #cecece;
     box-shadow: inset 0 0 10px #cecece;   
     padding:0 10px; 
 }
@@ -318,48 +310,51 @@ form{
     border-color: #9c9c9c;
 }
 
-.nl-kind{
-    background: #cac9c9;
-    margin-top: 10px;
-    padding:10px 10px;
+.box-sub{
+    background: #cac9c9!important;
+    margin:10px 10px 0 0;
+    padding-bottom: 10px;
 }
 
-.nl-kind h4{
+.box-sub legend{
     font-size: 12px;
     font-style: italic;
     font-weight: 300;
+    float: left;  /*To prevent the legend to appear in the border of the fieldset*/
+    padding: 10px 0 0 10px;
+    width: 100%;
 }
 
-.nl-kind input[type="checkbox"]{
-    margin:10px 0 0 0;   
+.box-sub input[type="checkbox"]{    
     opacity: 0;
-    position: absolute;    
+    position: absolute;   
+    padding-right: 10px; 
 }
 
-.nl-kind input[type="checkbox"] + label {
+.box-sub input[type="checkbox"] + label {
     text-align:center;
     cursor:pointer;
 }
 
-.nl-kind label div{    
+.box-sub label span{    
     display: inline-block;
     margin-top: 3px;
     height: 14px;
     width: 13px;    
+    padding-right: 10px;
     background: transparent url('../images/checkBox_btn.gif') left top/13px 14px no-repeat;    
 }
 
 
-.nl-kind input[type="checkbox"]:checked + label div {
+.box-sub input[type="checkbox"]:checked + label span {
     height: 14px;
     width: 13px;
     background: transparent url('../images/checkBox_btn_checked.gif') left top/13px 14px no-repeat;    
 }
 
-.nl-kind label{
+.box-sub label{
     font-weight: 600;
-    padding-left:5px;
-    padding-top: 2px;
+    padding: 4px 0 0 10px;    
 }
 
 .sign-up{
@@ -368,7 +363,7 @@ form{
     height: 25px;
     color:#fff;
     background: #0084d9;
-    margin:9px 0 2px;
+    margin:10px 10px 10px 0;
     float:right;
     text-transform: uppercase;
     font-size: 12px
@@ -377,33 +372,23 @@ form{
 .sign-up:hover{
     cursor: pointer;
     background: #00527a;
-    -webkit-transition: all .25s ease-in-out;
-       -moz-transition: all .25s ease-in-out;
-        -ms-transition: all .25s ease-in-out;
-         -o-transition: all .25s ease-in-out;
-            transition: all .25s ease-in-out;    
+    transition: all .25s ease-in-out;    
 }
 
-.nl-footer{
-    width: 274px;
+.box-footer{
     background: #cac9c9;
     border-top:1px solid #969696;
     text-align: center;
-    padding: 5px 0;
+    padding: 5px 0 5px 0;
     font-size: 12px;
 }
 
-.nl-footer li{
-    display: inline;
+.box-footer a{
+    color:#282b2e;       
 }
 
-.nl-footer li a{
-    color:#282b2e;
-    padding-right:12px;   
-}
-.nl-footer li:first-child{
-    border-right:1px solid #282b2e;
-    margin-right: 12px;    
+.box-footer > * + *:before{
+	background: #282b2e;
 }
 
 /* ---------------------------------------------------------------------
@@ -447,7 +432,7 @@ form{
     margin-right: 16px;
 }
 
-/*to make it responsive add media-query and make it 3n+1, 2n+1 and after that apply it to all(without pseudo >*/
+/*to make it responsive add media-query and make it 3n+1, 2n+1 and after that apply it to all(without pseudo >)*/
 
 .video-tn:nth-child(4n+1){  
     margin-right: 0;
@@ -483,12 +468,9 @@ form{
 .video-tn:hover{
     cursor: pointer;
 }
+
 .video-tn:hover .play-btn,.video-tn:hover .video-cap{
-    -webkit-transition: all .1s ease-in-out;
-       -moz-transition: all .1s ease-in-out;
-        -ms-transition: all .1s ease-in-out;
-         -o-transition: all .1s ease-in-out;
-            transition: all .1s ease-in-out;
+    transition: all .1s ease-in-out;
     opacity: 1;
 }
 
@@ -497,32 +479,24 @@ form{
  Footer
 --------------------------------------------------------------------- */
 
-.entp-data{
-    
+.entp-data{    
     margin-top: 10px;
 }
 
-.entp-data p, .entp-data address{
-    display: inline-block;
+.entp-data > * + *:before{
+	background-color:#969696;
+}
+
+.entp-data small, .entp-data address{   
     color:#969696;
     font-size: 12px;
 }
 
-.entp-data p {
-    border-right:1px solid #969696;
-    padding-right: 12px;    
-}
-
-.entp-data address{
-    padding-left: 12px;
-}
-
-.social-btns{
-    
+.social-btns{    
     float: right;
     position: absolute;
     top: 9px;
-    right: 0; /*Darle dos vueltas*/
+    right: 0; 
 }
 
 .social-btns ul{

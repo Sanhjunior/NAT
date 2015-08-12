@@ -2,6 +2,8 @@
  * @fileOverview Carousel
  *
  * @author nerdery
+ *
+ * 
  */
 $(function() {
 
@@ -273,7 +275,7 @@ $(function() {
 
         this.timer = setInterval(function() { 
             self.goToNextSlide();
-            self.activeEllipsis(self.currentIndex,self.numSlides); // by David
+            self.activeEllipsis(self.currentIndex); // by David
         }, TIMING.INTERVAL);
 
         return this;
@@ -360,7 +362,7 @@ $(function() {
      */
 
     Carousel.prototype.ellipsis = function(index){
-        var slides = index; //index that will tall us how many slides we have
+        var slides = index; 
 
         // Creating wrapper for the ellipsis
         var $carrousel_selector = $(SELECTORS.CAROUSEL_WRAPPER);
